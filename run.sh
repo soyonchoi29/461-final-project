@@ -1,11 +1,10 @@
-CFG_PATH=./configs
-TOPS_PATH=./topologies
-LOG_DIR=./log.txt
+CFG_PATH=./google.cfg
+TOPS_PATH=./topologies/custom
+LOG_DIR=./logs
 
-for cf in "${CFG_PATH}"/*
+for top in ${TOPS_PATH}/*
 do
-  for top in "${TOPS_PATH}"/*
-  do
-    python3 ./scale-sim-v2/scalesim/scale.py -c ${cf} -t ${top} -p ${LOG_DIR}
-  done
+  curr_log_dir=${LOG_DIR}/$(basename ${top})
+  mkdir ${curr_log_dir}
+  python3 ./scale-sim-v2/scalesim/scale.py -c ${CFG_PATH} -t ${top} -p ${curr_log_dir} | tee ${curr_log_dir}/run_log.txt
 done
