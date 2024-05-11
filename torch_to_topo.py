@@ -22,8 +22,7 @@ def create_conv_topo(model, path=base_dir, filename='', input_dim=(2, 3, 224, 22
         filename = model.__class__.__name__+'.csv'
 
     topo = topology_utils.topologies()
-    prev_arr = []
-    curr_arr = []
+    prev_arr, curr_arr = [], []
     last = 0
 
     model_stats = summary(model, input_size=input_dim, col_names=('input_size','output_size','num_params','kernel_size'), verbose=1)

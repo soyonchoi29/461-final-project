@@ -1,41 +1,52 @@
 import argparse
+import os
 import torch
 import torch.nn as nn
-
-from torchvision import models, datasets
-from torchvision.transforms import ToTensor
-from torchinfo import summary
-
 from scalesim.topology_utils import topologies
 
 
 blocked_dir = './topologies/blocked'
 base_dir = './topologies/custom'
 
-criterion = nn.CrossEntropyLoss()
 
 def read_topology(topology_file):
     topo = topologies()
-    topo.load_arrays(topofile=topology_file)
+    topo.load_arrays(topofile=base_dir+'/'+topology_file)
     return topo
 
 
-# width-wise blocking of scale-sim topology file
-def block_topo(topo, num_blocks):
-    pass
+# depth-wise blocking of scale-sim topology file
+def block_topo_depth(topo_file, num_blocks, first_run=False):
+    total_topo = read_topology(topo_file)
+    topo_name = topo_file[:-4]
+    arrs = total_topo.topo_arrays
+    layers_per_block = len(arrs)//num_blocks
+    block_idx, layer_idx = 0, 0
+    blocks = [[] for _ in range(num_blocks)]
+    for arr in arrs:
+        if block_idx == num_blocks:
+            blocks[block_idx-1].append(arr)
+            continue
+        if layer_idx < layers_per_block:
+            blocks[block_idx].append(arr)
+            layer_idx += 1
+        else:
+            block_idx += 1
+            layer_idx = 1
+            if block_idx < num_blocks:
+                blocks[block_idx].append(arr)
+            else:
+                blocks[block_idx-1].append(arr)
 
-
-# depth-wise blocking of PyTorch module
-def block_model_depth(model, num_blocks):
-    pass
-
-
-# given test data, outputs model accuracy
-def test_model(model, test_X, test_y):
-    N = test_X.shape[0]
-    preds = model(test_X)
-    acc = torch.sum(preds == test_y).float() / N
-    return acc
+    topos = [topologies() for _ in range(num_blocks)]
+    if first_run:
+        os.mkdir(blocked_dir + '/' + topo_name)
+    os.mkdir(blocked_dir+'/'+topo_name+'/{}_blocks'.format(num_blocks))
+    for i in range(len(topos)):
+        for layer in blocks[i]:
+            topos[i].topo_arrays.append(layer)
+        topos[i].topo_load_flag = True
+        topos[i].write_topo_file(path=blocked_dir+'/'+topo_name+'/{}_blocks'.format(num_blocks), filename=topo_name+'_block{}.csv'.format(i))
 
 
 if __name__ == '__main__':
@@ -48,11 +59,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     num_blocks = args.b
 
-    if __name__ == '__main__':
-        model_names = ['alexnet', 'resnet18', 'vgg11']
-        # models = [getattr(models, model_names[0])(pretrained=True)]
-        models = [getattr(models, model)(pretrained=True) for model in model_names]
-
-        for i in range(len(models)):
-            block_model_depth(models[i], criterion)
-
+    for topo_file in os.listdir(base_dir):
+        block_topo_depth(topo_file, num_blocks)
