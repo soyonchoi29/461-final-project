@@ -13,7 +13,7 @@ criterion = nn.CrossEntropyLoss()
 from imagenetv2_pytorch import ImageNetV2Dataset
 from torch.utils.data import DataLoader
 
-dataset = ImageNetV2Dataset("matched-frequency", transform=ToTensor)
+dataset = ImageNetV2Dataset("matched-frequency")
 dataloader = torch.utils.data.DataLoader(dataset, batch_size=32, shuffle=True)
 print(dataloader.dataset[0])
 exit()
