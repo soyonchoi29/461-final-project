@@ -4,13 +4,16 @@ LOG_DIR=./logs
 
 for base in ${TOPS_PATH}/*
 do
-  mkdir ${LOG_DIR}/$(basename ${base})
-  for blocked_tops in ${base}/*
+  model_log_dir=${LOG_DIR}/$(basename ${base})
+  mkdir ${model_log_dir}
+  for blocks in ${base}/*
   do
-    curr_block_log_dir=${LOG_DIR}/$(basename ${base})/$(basename ${blocked_tops})
-    mkdir ${curr_block_log_dir}
-    for block in ${TOPS_PATH}/$(basename ${base})
+    blocks_log_dir=${model_log_dir}/$(basename ${blocks})
+    mkdir ${blocks_log_dir}
+    for block in ${blocks}/*
     do
+      curr_block_log_dir=${blocks_log_dir}/$(basename ${block})
+      mkdir ${curr_block_log_dir}
       python3 ./scale-sim-v2/scalesim/scale.py -c ${CFG_PATH} -t ${block} -p ${curr_block_log_dir} | tee ${curr_block_log_dir}/run_log.txt
     done
   done
