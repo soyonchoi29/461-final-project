@@ -37,51 +37,51 @@ criterion = nn.CrossEntropyLoss()
 
 
 # depth-wise blocked training of PyTorch module
-def fit_blocks(model, num_blocks, dataloader):
+def fit_blocks(model, num_blocks, dataloader, epochs=50):
     start = time.time()
 
     if num_blocks == 1:
         optimizer = torch.optim.Adam(model.parameters(), lr=5e-5)
-        model = fit(model, optimizer, dataloader, epochs=5)
-        print('training time for {} blocks: %.2f'.format(num_blocks) % (time.time() - start))
-        pickle.dump(model, open(models_dir+'/alexnet_{}_block'.format(num_blocks), 'wb'))
-        print('saved model with {} blocks!'.format(num_blocks))
-        return
-
-    layers = get_children(model)
-    layers_per_block = len(layers)//num_blocks
-    block_idx, layer_idx = 0, 0
-    blocks = [[] for _ in range(num_blocks)]
-    for layer in layers:
-        if block_idx == num_blocks:
-            blocks[block_idx-1].append(layer)
-            continue
-        if layer_idx < layers_per_block:
-            blocks[block_idx].append(layer)
-            layer_idx += 1
-        else:
-            block_idx += 1
-            layer_idx = 1
-            if block_idx < num_blocks:
-                blocks[block_idx].append(layer)
-            else:
+        model = fit(model, optimizer, dataloader, epochs=epochs)
+    else:
+        layers = get_children(model)
+        layers_per_block = len(layers)//num_blocks
+        epochs_per_block = epochs//num_blocks
+        block_idx, layer_idx = 0, 0
+        blocks = [[] for _ in range(num_blocks)]
+        for layer in layers:
+            if block_idx == num_blocks:
                 blocks[block_idx-1].append(layer)
+                continue
+            if layer_idx < layers_per_block:
+                blocks[block_idx].append(layer)
+                layer_idx += 1
+            else:
+                block_idx += 1
+                layer_idx = 1
+                if block_idx < num_blocks:
+                    blocks[block_idx].append(layer)
+                else:
+                    blocks[block_idx-1].append(layer)
 
-    for i in range(num_blocks):
-        print('\n about to train block {}!'.format(i))
-        # freeze all layers
-        params = []
-        for param in model.parameters():
-            param.requires_grad = False
-        # unfreeze just the layers in the block i'm currently training
-        for layer in blocks[i]:
-            for param in layer.parameters():
-                param.requires_grad = True
-                params.append(param)
-        if params:
-            optimizer = torch.optim.Adam(params, lr=5e-5)
-            # now train!
-            model = fit(model, optimizer, dataloader, epochs=5)
+        for i in range(num_blocks):
+            print('\n about to train block {}!'.format(i))
+            # freeze all layers
+            params = []
+            epochs_block = epochs_per_block
+            for param in model.parameters():
+                param.requires_grad = False
+            # unfreeze just the layers in the block i'm currently training
+            for layer in blocks[i]:
+                for param in layer.parameters():
+                    param.requires_grad = True
+                    params.append(param)
+            if params:
+                if i == num_blocks-1:
+                    epochs_block = epochs_per_block + (epochs % num_blocks)
+                optimizer = torch.optim.Adam(params, lr=5e-5)
+                # now train!
+                model = fit(model, optimizer, dataloader, epochs=epochs_block)
 
     print('training time for {} blocks: %.2f'.format(num_blocks) % (time.time() - start))
     pickle.dump(model, open(models_dir+'/alexnet_{}_blocks'.format(num_blocks), 'wb'))
@@ -90,6 +90,7 @@ def fit_blocks(model, num_blocks, dataloader):
 
 def fit(model, optimizer, dataloader, epochs=50):
     model.train()
+    losses = []
     for epoch in range(epochs):
         for batch, labels in dataloader:
             x = batch.to(device)
@@ -98,12 +99,14 @@ def fit(model, optimizer, dataloader, epochs=50):
             optimizer.zero_grad()
             preds = model(x)
             loss = criterion(preds, y)
+            losses.append(loss.item())
 
             loss.backward()
             optimizer.step()
 
         with torch.no_grad():
             print('Epoch %d/%d, Avg Loss: %.4f' % (epoch, epochs, loss.item()))
+    print(losses)
     return model
 
 def get_children(model: torch.nn.Module):
@@ -125,7 +128,7 @@ def get_children(model: torch.nn.Module):
 
 # given test data, outputs model accuracy
 def test_model(model, testloader):
-    acc = 0
+    total_loss = 0
     total = 0
     model.eval()
     with torch.no_grad():
@@ -133,13 +136,12 @@ def test_model(model, testloader):
             x = batch.to(device)
             y = labels.to(device)
             preds = model(x)
-            preds = torch.softmax(preds, dim=1)
-            preds = torch.argmax(preds, dim=1)
-            acc += torch.sum(preds.long() == y).float().mean()
-            total += 1.
+            loss = criterion(preds, y)
+            total_loss += loss
+            total += 1
 
-    total_acc = acc/total
-    return total_acc
+    total_loss = total_loss/total
+    return total_loss
 
 
 if __name__ == '__main__':
@@ -153,5 +155,5 @@ if __name__ == '__main__':
     num_blocks = args.b
 
     fit_blocks(model, num_blocks, trainloader)
-    print('test acc: %.2f' % test_model(model, testloader))
+    print('test loss: %.2f' % test_model(model, testloader))
 
