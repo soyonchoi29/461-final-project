@@ -1,0 +1,63 @@
+
+ about to train block 0!
+Epoch 0/6, Avg Loss: 12.6865
+Epoch 1/6, Avg Loss: 14.4051
+Epoch 2/6, Avg Loss: 12.9540
+Epoch 3/6, Avg Loss: 13.6116
+Epoch 4/6, Avg Loss: 12.4279
+Epoch 5/6, Avg Loss: 13.6797
+[12.686478614807129, 14.405056953430176, 12.953988075256348, 13.611618995666504, 12.427947998046875, 13.679726600646973]
+
+ about to train block 1!
+Epoch 0/6, Avg Loss: 13.4295
+Epoch 1/6, Avg Loss: 12.4907
+Epoch 2/6, Avg Loss: 11.8915
+Epoch 3/6, Avg Loss: 12.0382
+Epoch 4/6, Avg Loss: 11.0745
+Epoch 5/6, Avg Loss: 10.8315
+[13.429503440856934, 12.490674018859863, 11.891545295715332, 12.038204193115234, 11.074520111083984, 10.83151626586914]
+
+ about to train block 2!
+
+ about to train block 3!
+Epoch 0/6, Avg Loss: 10.1104
+Epoch 1/6, Avg Loss: 9.5532
+Epoch 2/6, Avg Loss: 9.8778
+Epoch 3/6, Avg Loss: 9.1159
+Epoch 4/6, Avg Loss: 9.2492
+Epoch 5/6, Avg Loss: 8.5806
+[10.110430717468262, 9.553238868713379, 9.877839088439941, 9.11593246459961, 9.249224662780762, 8.58061408996582]
+
+ about to train block 4!
+Epoch 0/6, Avg Loss: 8.4703
+Epoch 1/6, Avg Loss: 7.9222
+Epoch 2/6, Avg Loss: 8.4136
+Epoch 3/6, Avg Loss: 7.7991
+Epoch 4/6, Avg Loss: 8.2311
+Epoch 5/6, Avg Loss: 7.9661
+[8.470321655273438, 7.922199726104736, 8.413593292236328, 7.7990899085998535, 8.231124877929688, 7.966094493865967]
+
+ about to train block 5!
+Epoch 0/6, Avg Loss: 7.8412
+Epoch 1/6, Avg Loss: 7.8752
+Epoch 2/6, Avg Loss: 7.7752
+Epoch 3/6, Avg Loss: 7.6065
+Epoch 4/6, Avg Loss: 7.6259
+Epoch 5/6, Avg Loss: 7.3693
+[7.841211318969727, 7.875217914581299, 7.775172710418701, 7.606539726257324, 7.6258955001831055, 7.3693156242370605]
+
+ about to train block 6!
+
+ about to train block 7!
+Epoch 0/8, Avg Loss: 7.6824
+Epoch 1/8, Avg Loss: 7.3086
+Epoch 2/8, Avg Loss: 6.8868
+Epoch 3/8, Avg Loss: 6.8656
+Epoch 4/8, Avg Loss: 6.7336
+Epoch 5/8, Avg Loss: 6.4406
+Epoch 6/8, Avg Loss: 6.3855
+Epoch 7/8, Avg Loss: 6.0466
+[7.682374477386475, 7.308563709259033, 6.886777877807617, 6.865562915802002, 6.733625411987305, 6.440553188323975, 6.38552188873291, 6.046597957611084]
+training time for 8 blocks: 52.14
+saved model with 8 blocks!
+test loss: 7.32
