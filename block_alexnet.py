@@ -24,7 +24,7 @@ trans = transforms.Compose([pil_to_tensor,
                             transforms.RandomCrop(224),
                             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
                             ])
-dataset = datasets.ImageFolder(root='ImageNetV2-matched-frequency', transform=trans)
+dataset = datasets.ImageFolder(root='./data/ImageNetV2-matched-frequency', transform=trans)
 dataset = torch.utils.data.Subset(dataset, np.random.randint(int(len(dataset)), size=130))
 lengths = [100, 30]
 train_dataset, test_dataset = torch.utils.data.random_split(dataset, lengths)
@@ -33,7 +33,6 @@ trainloader = torch.utils.data.DataLoader(train_dataset, batch_size=50, shuffle=
 testloader = torch.utils.data.DataLoader(test_dataset, batch_size=10, shuffle=True)
 
 model = getattr(models, 'alexnet')(pretrained=True)
-optimizer = torch.optim.Adam(model.parameters(), lr=5e-5)
 criterion = nn.CrossEntropyLoss()
 
 
@@ -42,7 +41,8 @@ def fit_blocks(model, num_blocks, dataloader):
     start = time.time()
 
     if num_blocks == 1:
-        model = fit(model, dataloader, epochs=5)
+        optimizer = torch.optim.Adam(model.parameters(), lr=5e-5)
+        model = fit(model, optimizer, dataloader, epochs=5)
         print('training time for {} blocks: %.2f'.format(num_blocks) % (time.time() - start))
         pickle.dump(model, open(models_dir+'/alexnet_{}_block'.format(num_blocks), 'wb'))
         print('saved model with {} blocks!'.format(num_blocks))
@@ -68,21 +68,27 @@ def fit_blocks(model, num_blocks, dataloader):
                 blocks[block_idx-1].append(layer)
 
     for i in range(num_blocks):
+        print('\n about to train block {}!'.format(i))
         # freeze all layers
+        params = []
         for param in model.parameters():
             param.requires_grad = False
         # unfreeze just the layers in the block i'm currently training
         for layer in blocks[i]:
-            layer.requires_grad_(True)
-        # now train!
-        model = fit(model, dataloader, epochs=5)
+            for param in layer.parameters():
+                param.requires_grad = True
+                params.append(param)
+        if params:
+            optimizer = torch.optim.Adam(params, lr=5e-5)
+            # now train!
+            model = fit(model, optimizer, dataloader, epochs=5)
 
     print('training time for {} blocks: %.2f'.format(num_blocks) % (time.time() - start))
     pickle.dump(model, open(models_dir+'/alexnet_{}_blocks'.format(num_blocks), 'wb'))
     print('saved model with {} blocks!'.format(num_blocks))
 
 
-def fit(model, dataloader, epochs=50):
+def fit(model, optimizer, dataloader, epochs=50):
     model.train()
     for epoch in range(epochs):
         for batch, labels in dataloader:
@@ -124,9 +130,11 @@ def test_model(model, testloader):
     model.eval()
     with torch.no_grad():
         for batch, labels in testloader:
-            x = batch.cuda()
-            y = labels.cuda()
+            x = batch.to(device)
+            y = labels.to(device)
             preds = model(x)
+            preds = torch.softmax(preds, dim=1)
+            preds = torch.argmax(preds, dim=1)
             acc += torch.sum(preds.long() == y).float().mean()
             total += 1.
 
