@@ -1,6 +1,6 @@
 CFG_PATH=./google.cfg
-TOPS_PATH=./topologies/blocked
-LOG_DIR=./logs
+TOPS_PATH=./topologies/width_blocked
+LOG_DIR=./logs/width
 
 for base in ${TOPS_PATH}/*
 do
