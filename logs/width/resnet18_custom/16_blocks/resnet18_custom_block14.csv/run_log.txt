@@ -1,0 +1,13 @@
+====================================================
+******************* SCALE SIM **********************
+====================================================
+Array Size: 	256x256
+SRAM IFMAP (kB): 	6144
+SRAM Filter (kB): 	6144
+SRAM OFMAP (kB): 	2048
+Dataflow: 	Weight Stationary
+CSV file path: 	./topologies/width_blocked/resnet18_custom/16_blocks/resnet18_custom_block14.csv
+Working in ESTIMATE BANDWIDTH mode.
+====================================================
+
+Running Layer 0
