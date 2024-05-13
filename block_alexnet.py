@@ -99,11 +99,10 @@ def fit(model, optimizer, dataloader, epochs=50):
             optimizer.zero_grad()
             preds = model(x)
             loss = criterion(preds, y)
-            losses.append(loss.item())
-
             loss.backward()
             optimizer.step()
 
+        losses.append(loss.item())
         with torch.no_grad():
             print('Epoch %d/%d, Avg Loss: %.4f' % (epoch, epochs, loss.item()))
     print(losses)
