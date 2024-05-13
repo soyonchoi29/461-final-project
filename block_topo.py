@@ -1,11 +1,13 @@
 import argparse
+import copy
 import os
 import torch
 import torch.nn as nn
 from scalesim.topology_utils import topologies
 
 
-blocked_dir = './topologies/blocked'
+depth_blocked_dir = 'topologies/depth_blocked'
+width_blocked_dir = 'topologies/width_blocked'
 base_dir = './topologies/custom'
 
 
@@ -40,13 +42,47 @@ def block_topo_depth(topo_file, num_blocks, first_run=False):
 
     topos = [topologies() for _ in range(num_blocks)]
     if first_run:
-        os.mkdir(blocked_dir + '/' + topo_name)
-    os.mkdir(blocked_dir+'/'+topo_name+'/{}_blocks'.format(num_blocks))
+        os.mkdir(depth_blocked_dir + '/' + topo_name)
+    os.mkdir(depth_blocked_dir+'/'+topo_name+'/{}_blocks'.format(num_blocks))
     for i in range(len(topos)):
         for layer in blocks[i]:
             topos[i].topo_arrays.append(layer)
         topos[i].topo_load_flag = True
-        topos[i].write_topo_file(path=blocked_dir+'/'+topo_name+'/{}_blocks'.format(num_blocks), filename=topo_name+'_block{}.csv'.format(i))
+        topos[i].write_topo_file(path=depth_blocked_dir+'/'+topo_name+'/{}_blocks'.format(num_blocks), filename=topo_name+'_block{}.csv'.format(i))
+
+
+# width-wise blocking of scale-sim topology file
+def block_topo_width(topo_file, num_blocks, first_run=False):
+    total_topo = read_topology(topo_file)
+    topo_name = topo_file[:-4]
+    arrs = total_topo.topo_arrays
+    blocks = [[] for _ in range(num_blocks)]
+    for arr in arrs:
+        in_channels_per_block = arr[5] // num_blocks
+        out_channels_per_block = arr[6] // num_blocks
+        for i in range(num_blocks):
+            if i == num_blocks-1:  # last block
+                in_num_channels = in_channels_per_block + (arr[5] % num_blocks)
+                out_num_channels = out_channels_per_block + (arr[5] % num_blocks)
+                to_add = copy.copy(arr)
+                to_add[5] = in_num_channels
+                to_add[6] = out_num_channels
+                blocks[i].append(to_add)
+            else:
+                to_add = copy.copy(arr)
+                to_add[5] = in_channels_per_block
+                to_add[6] = out_channels_per_block
+                blocks[i].append(to_add)
+
+    topos = [topologies() for _ in range(num_blocks)]
+    if first_run:
+        os.mkdir(width_blocked_dir + '/' + topo_name)
+    os.mkdir(width_blocked_dir+'/'+topo_name+'/{}_blocks'.format(num_blocks))
+    for i in range(len(topos)):
+        for layer in blocks[i]:
+            topos[i].topo_arrays.append(layer)
+        topos[i].topo_load_flag = True
+        topos[i].write_topo_file(path=width_blocked_dir+'/'+topo_name+'/{}_blocks'.format(num_blocks), filename=topo_name+'_block{}.csv'.format(i))
 
 
 if __name__ == '__main__':
@@ -60,4 +96,4 @@ if __name__ == '__main__':
     num_blocks = args.b
 
     for topo_file in os.listdir(base_dir):
-        block_topo_depth(topo_file, num_blocks)
+        block_topo_width(topo_file, num_blocks)
