@@ -1,0 +1,57 @@
+====================================================
+******************* SCALE SIM **********************
+====================================================
+Array Size: 	256x256
+SRAM IFMAP (kB): 	6144
+SRAM Filter (kB): 	6144
+SRAM OFMAP (kB): 	2048
+Dataflow: 	Weight Stationary
+CSV file path: 	./topologies/blocked/vgg11_custom/4_blocks/vgg11_custom_block3.csv
+Working in ESTIMATE BANDWIDTH mode.
+====================================================
+
+Running Layer 0
+Compute cycles: 32759
+Stall cycles: 0
+Overall utilization: 15.82%
+Mapping efficiency: 100.00%
+Average IFMAP DRAM BW: 7.975 words/cycle
+Average Filter DRAM BW: 9.868 words/cycle
+Average OFMAP DRAM BW: 173.013 words/cycle
+
+Running Layer 1
+Compute cycles: 1605239
+Stall cycles: 0
+Overall utilization: 15.82%
+Mapping efficiency: 100.00%
+Average IFMAP DRAM BW: 7.975 words/cycle
+Average Filter DRAM BW: 61.284 words/cycle
+Average OFMAP DRAM BW: 41.180 words/cycle
+
+Running Layer 2
+Compute cycles: 1202655
+Stall cycles: 0
+Overall utilization: 0.13%
+Mapping efficiency: 100.00%
+Average IFMAP DRAM BW: 3.987 words/cycle
+Average Filter DRAM BW: 68.866 words/cycle
+Average OFMAP DRAM BW: 256.000 words/cycle
+
+Running Layer 3
+Compute cycles: 196351
+Stall cycles: 0
+Overall utilization: 0.13%
+Mapping efficiency: 100.00%
+Average IFMAP DRAM BW: 0.651 words/cycle
+Average Filter DRAM BW: 33.680 words/cycle
+Average OFMAP DRAM BW: 256.000 words/cycle
+
+Running Layer 4
+Compute cycles: 196351
+Stall cycles: 0
+Overall utilization: 0.13%
+Mapping efficiency: 100.00%
+Average IFMAP DRAM BW: 0.651 words/cycle
+Average Filter DRAM BW: 33.680 words/cycle
+Average OFMAP DRAM BW: 256.000 words/cycle
+************ SCALE SIM Run Complete ****************

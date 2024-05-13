@@ -1,0 +1,21 @@
+====================================================
+******************* SCALE SIM **********************
+====================================================
+Array Size: 	256x256
+SRAM IFMAP (kB): 	6144
+SRAM Filter (kB): 	6144
+SRAM OFMAP (kB): 	2048
+Dataflow: 	Weight Stationary
+CSV file path: 	./topologies/blocked/vgg11_custom/9_blocks/vgg11_custom_block2.csv
+Working in ESTIMATE BANDWIDTH mode.
+====================================================
+
+Running Layer 0
+Compute cycles: 18409
+Stall cycles: 0
+Overall utilization: 71.28%
+Mapping efficiency: 90.00%
+Average IFMAP DRAM BW: 9.115 words/cycle
+Average Filter DRAM BW: 9.375 words/cycle
+Average OFMAP DRAM BW: 245.542 words/cycle
+************ SCALE SIM Run Complete ****************

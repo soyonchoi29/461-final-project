@@ -1,0 +1,21 @@
+====================================================
+******************* SCALE SIM **********************
+====================================================
+Array Size: 	256x256
+SRAM IFMAP (kB): 	6144
+SRAM Filter (kB): 	6144
+SRAM OFMAP (kB): 	2048
+Dataflow: 	Weight Stationary
+CSV file path: 	./topologies/blocked/alexnet_custom/3_blocks/alexnet_custom_block1.csv
+Working in ESTIMATE BANDWIDTH mode.
+====================================================
+
+Running Layer 0
+Compute cycles: 9064
+Stall cycles: 0
+Overall utilization: 27.36%
+Mapping efficiency: 66.96%
+Average IFMAP DRAM BW: 7.415 words/cycle
+Average Filter DRAM BW: 9.766 words/cycle
+Average OFMAP DRAM BW: 255.931 words/cycle
+************ SCALE SIM Run Complete ****************

@@ -1,0 +1,12 @@
+====================================================
+******************* SCALE SIM **********************
+====================================================
+Array Size: 	256x256
+SRAM IFMAP (kB): 	6144
+SRAM Filter (kB): 	6144
+SRAM OFMAP (kB): 	2048
+Dataflow: 	Weight Stationary
+CSV file path: 	./topologies/blocked/alexnet_custom/8_blocks/alexnet_custom_block6.csv
+Working in ESTIMATE BANDWIDTH mode.
+====================================================
+************ SCALE SIM Run Complete ****************

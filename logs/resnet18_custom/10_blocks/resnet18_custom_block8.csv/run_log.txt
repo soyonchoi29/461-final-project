@@ -1,0 +1,30 @@
+====================================================
+******************* SCALE SIM **********************
+====================================================
+Array Size: 	256x256
+SRAM IFMAP (kB): 	6144
+SRAM Filter (kB): 	6144
+SRAM OFMAP (kB): 	2048
+Dataflow: 	Weight Stationary
+CSV file path: 	./topologies/blocked/resnet18_custom/10_blocks/resnet18_custom_block8.csv
+Working in ESTIMATE BANDWIDTH mode.
+====================================================
+
+Running Layer 0
+Compute cycles: 14237
+Stall cycles: 0
+Overall utilization: 3.16%
+Mapping efficiency: 100.00%
+Average IFMAP DRAM BW: 3.987 words/cycle
+Average Filter DRAM BW: 9.868 words/cycle
+Average OFMAP DRAM BW: 256.000 words/cycle
+
+Running Layer 1
+Compute cycles: 1659
+Stall cycles: 0
+Overall utilization: 7.72%
+Mapping efficiency: 100.00%
+Average IFMAP DRAM BW: 1.994 words/cycle
+Average Filter DRAM BW: 6.944 words/cycle
+Average OFMAP DRAM BW: 256.000 words/cycle
+************ SCALE SIM Run Complete ****************
