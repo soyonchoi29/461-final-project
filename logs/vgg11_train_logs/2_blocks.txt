@@ -1,0 +1,12 @@
+Epoch 0/5, Avg Loss: 13.4257
+Epoch 1/5, Avg Loss: 10.3140
+Epoch 2/5, Avg Loss: 8.5158
+Epoch 3/5, Avg Loss: 7.3772
+Epoch 4/5, Avg Loss: 7.4959
+Epoch 0/5, Avg Loss: 6.8346
+Epoch 1/5, Avg Loss: 6.6777
+Epoch 2/5, Avg Loss: 6.4478
+Epoch 3/5, Avg Loss: 5.9544
+Epoch 4/5, Avg Loss: 6.0560
+training time for 2 blocks: 103.33
+saved model with 2 blocks!

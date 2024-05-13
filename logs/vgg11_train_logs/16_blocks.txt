@@ -1,0 +1,5 @@
+Epoch 0/5, Avg Loss: 14.3420
+Epoch 1/5, Avg Loss: 15.9292
+Epoch 2/5, Avg Loss: 12.7017
+Epoch 3/5, Avg Loss: 13.8501
+Epoch 4/5, Avg Loss: 13.9823

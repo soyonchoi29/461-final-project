@@ -1,0 +1,31 @@
+
+ about to train block 0!
+Epoch 0/5, Avg Loss: 12.1832
+Epoch 1/5, Avg Loss: 11.2101
+Epoch 2/5, Avg Loss: 10.2154
+Epoch 3/5, Avg Loss: 10.2348
+Epoch 4/5, Avg Loss: 10.4591
+
+ about to train block 1!
+Epoch 0/5, Avg Loss: 9.5919
+Epoch 1/5, Avg Loss: 9.1168
+Epoch 2/5, Avg Loss: 9.0810
+Epoch 3/5, Avg Loss: 8.1683
+Epoch 4/5, Avg Loss: 7.4460
+
+ about to train block 2!
+Epoch 0/5, Avg Loss: 7.7165
+Epoch 1/5, Avg Loss: 8.0574
+Epoch 2/5, Avg Loss: 7.6876
+Epoch 3/5, Avg Loss: 7.4085
+Epoch 4/5, Avg Loss: 7.3590
+
+ about to train block 3!
+Epoch 0/5, Avg Loss: 7.6304
+Epoch 1/5, Avg Loss: 6.9568
+Epoch 2/5, Avg Loss: 6.7392
+Epoch 3/5, Avg Loss: 6.9646
+Epoch 4/5, Avg Loss: 6.0953
+training time for 4 blocks: 31.00
+saved model with 4 blocks!
+test acc: 0.33
