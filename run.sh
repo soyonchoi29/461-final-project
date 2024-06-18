@@ -1,4 +1,4 @@
-CFG_PATH=./google.cfg
+CFG_PATH=./configs/scale.cfg
 TOPS_PATH=./topologies/custom
 LOG_DIR=./logs
 
