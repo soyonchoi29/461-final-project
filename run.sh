@@ -1,4 +1,4 @@
-CFG_PATH=./configs/scale.cfg
+CFG_PATH=./configs/small_sram.cfg
 TOPS_PATH=./topologies/custom
 LOG_DIR=./logs
 

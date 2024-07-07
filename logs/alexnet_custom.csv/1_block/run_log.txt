@@ -1,13 +1,60 @@
 ====================================================
 ******************* SCALE SIM **********************
 ====================================================
-Array Size: 	32x32
+Array Size: 	128x128
 SRAM IFMAP (kB): 	64
 SRAM Filter (kB): 	64
 SRAM OFMAP (kB): 	64
-Dataflow: 	Output Stationary
+Dataflow: 	Weight Stationary
 CSV file path: 	./topologies/custom/alexnet_custom.csv
 Working in ESTIMATE BANDWIDTH mode.
 ====================================================
 
 Running Layer 0
+<<<<<<< Updated upstream
+=======
+Compute cycles: 10220
+Stall cycles: 0
+Overall utilization: 41.97%
+Mapping efficiency: 47.27%
+Average IFMAP DRAM BW: 34.361 words/cycle
+Average Filter DRAM BW: 9.852 words/cycle
+Average OFMAP DRAM BW: 60.457 words/cycle
+
+Running Layer 1
+Compute cycles: 23685
+Stall cycles: 0
+Overall utilization: 41.88%
+Mapping efficiency: 72.12%
+Average IFMAP DRAM BW: 39.716 words/cycle
+Average Filter DRAM BW: 12.613 words/cycle
+Average OFMAP DRAM BW: 56.948 words/cycle
+
+Running Layer 2
+Compute cycles: 21125
+Stall cycles: 0
+Overall utilization: 23.20%
+Mapping efficiency: 96.43%
+Average IFMAP DRAM BW: 9.908 words/cycle
+Average Filter DRAM BW: 28.210 words/cycle
+Average OFMAP DRAM BW: 32.492 words/cycle
+
+Running Layer 3
+Compute cycles: 27161
+Stall cycles: 0
+Overall utilization: 24.06%
+Mapping efficiency: 100.00%
+Average IFMAP DRAM BW: 28.240 words/cycle
+Average Filter DRAM BW: 29.432 words/cycle
+Average OFMAP DRAM BW: 32.202 words/cycle
+
+Running Layer 4
+Compute cycles: 289727
+Stall cycles: 0
+Overall utilization: 24.06%
+Mapping efficiency: 100.00%
+Average IFMAP DRAM BW: 21.554 words/cycle
+Average Filter DRAM BW: 32.254 words/cycle
+Average OFMAP DRAM BW: 30.926 words/cycle
+************ SCALE SIM Run Complete ****************
+>>>>>>> Stashed changes

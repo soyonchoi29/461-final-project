@@ -1,4 +1,4 @@
-CFG_PATH=./configs/scale.cfg
+CFG_PATH=./configs/less_small.cfg
 TOPS_PATH=./topologies/width_blocked
 LOG_DIR=./logs/width
 
