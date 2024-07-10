@@ -5,5 +5,5 @@ RES_DIR=./results/
 cd mNPUsim
 make $1
 cd ..
-scp -r ./mNPUsim/${1} ./${1}
+scp -r ./mNPUsim/${1} ./results/${1}
 echo "${1} done!"
