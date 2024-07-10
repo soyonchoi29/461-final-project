@@ -29,3 +29,7 @@ single_vgg11:
 	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
 	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/vgg11.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt single_vgg11 misc_config/single.cfg
 
+single_test1:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt network_config/netconfig_list/single/gpt2.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt single_gpt2 misc_config/single.cfg
+
