@@ -35,9 +35,9 @@ single_gpt2:
 
 single_deepspeech2:
 	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
-	./mnpusim arch_config/core_architecture_list/tpu.txt network_config/netconfig_list/single/DeepSpeech2_in_im2col.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt single_gpt2 misc_config/single.cfg
+	./mnpusim arch_config/core_architecture_list/tpu.txt network_config/netconfig_list/single/DeepSpeech2_in_im2col.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt single_deepspeech2 misc_config/single.cfg
 
 single_resnet50:
 	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
-	./mnpusim arch_config/core_architecture_list/tpu.txt network_config/netconfig_list/single/Resnet50_in_im2col.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt single_gpt2 misc_config/single.cfg
+	./mnpusim arch_config/core_architecture_list/tpu.txt network_config/netconfig_list/single/Resnet50_in_im2col.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt single_resnet50 misc_config/single.cfg
 
