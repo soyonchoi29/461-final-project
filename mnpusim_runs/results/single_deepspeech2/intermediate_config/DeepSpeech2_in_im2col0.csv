@@ -1,0 +1,8 @@
+Layer name, IFMAP Height, IFMAP Width, Filter Height, Filter Width, Channels, Num Filter, Strides, Type, IFMAP Base Addr(Absolute), Filter Base Addr(Absolute), Ofmap Base Addr(Absolute),
+DeepSpeech_conv1,700,161,41,11,1,32,2,Conv,0,0,127132,
+DeepSpeech_conv2,341,79,21,11,32,32,2,Conv,127132,127132,932124,
+BatchRNN1,672,2560,1,2560,1,4,1,Conv,932124,932124,1112444,
+BatchRNN2,2560,2560,1,2560,1,4,1,Conv,1112444,1112444,2652444,
+BatchRNN3,2560,2560,1,2560,1,4,1,Conv,2652444,2652444,7666044,
+FC,1,2560,1,2560,1,29,1,Conv,7666044,7666044,9206044,
+
