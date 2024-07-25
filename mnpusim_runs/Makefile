@@ -41,3 +41,11 @@ single_resnet50:
 	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
 	./mnpusim arch_config/core_architecture_list/tpu.txt network_config/netconfig_list/single/Resnet50_in_im2col.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt single_resnet50 misc_config/single.cfg
 
+
+alexnet_in_im2col_2o0_block:
+    export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+    ./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_in_im2col_blocked/2_blocks/alexnet_in_im2col_2o0_block.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_in_im2col_2o0_block misc_config/single.cfg
+
+alexnet_in_im2col_2o1_block:
+    export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+    ./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_in_im2col_blocked/2_blocks/alexnet_in_im2col_2o1_block.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_in_im2col_2o1_block misc_config/single.cfg
