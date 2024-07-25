@@ -11,7 +11,7 @@ from scalesim.topology_utils import topologies
 depth_blocked_dir = 'custom_network_configs/depth_blocked'
 width_blocked_dir = 'custom_network_configs/width_blocked'
 base_dir = 'custom_network_configs'
-og_dir = 'mNPUsim/network_config/network_architecture/CNN'
+og_dir = 'used_networks'
 
 
 class Layer():
@@ -147,7 +147,7 @@ if __name__ == '__main__':
                         help="Number of blocks to split network into"
                         )
     parser.add_argument('-t', metavar='Topology file', type=str,
-                        default='alexnet_in_im2col.csv',
+                        default='alexnet.csv',
                         help="Name of network topology file to block"
                         )
 
