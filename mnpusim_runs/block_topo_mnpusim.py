@@ -3,8 +3,6 @@ import copy
 import os
 import csv
 
-from scalesim.topology_utils import topologies
-
 
 depth_blocked_dir = 'custom_network_configs/depth_blocked'
 width_blocked_dir = 'custom_network_configs/width_blocked'
