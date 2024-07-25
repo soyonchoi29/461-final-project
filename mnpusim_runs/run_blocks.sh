@@ -4,9 +4,10 @@ RES_DIR=./results/
 
 python3 block_topo_mnpusim.py -b ${2} -t "${1}.csv"
 scp ./Makefile ./mNPUsim/Makefile
-cd mNPUsim
-for i in $(seq 0 ${2})
+
+for i in $(seq 0 $((${2}-1)))
 do
+    cd mNPUsim
     NAME="${1}_${2}o${i}_block"
     make "${NAME}"
     cd ..
