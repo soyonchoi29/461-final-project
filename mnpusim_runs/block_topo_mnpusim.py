@@ -2,8 +2,6 @@ import argparse
 import copy
 import os
 import csv
-import torch
-import torch.nn as nn
 
 from scalesim.topology_utils import topologies
 
