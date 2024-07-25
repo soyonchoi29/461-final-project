@@ -2,6 +2,7 @@ RES_DIR=./results/
 
 # run this script with the single parameter of the name of the run
 
+python3 block_topo_mnpusim.py -b ${2} -t ${1}
 scp ./Makefile ./mNPUsim/Makefile
 cd mNPUsim
 for i in $(seq 0 ${2})
