@@ -153,4 +153,4 @@ if __name__ == '__main__':
     topo_file = args.t
 
     topology = Topo()
-    topology.block_topo_depth(topo_file, num_blocks, first_run=False)
+    topology.block_topo_width(topo_file, num_blocks, first_run=False)
