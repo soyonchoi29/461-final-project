@@ -1,0 +1,5 @@
+name,ifmap_h,ifmap_w,filter_h,filter_w,channels,num_filter,stride,type,ifmap_base_addr,filter_base_addr,ofmap_base_addr
+Conv1,227,227,11,11,3,96,4,Conv,-1,-1,-1
+Conv2,31,31,5,5,96,256,1,Conv,-1,-2,-1
+Conv3,15,15,3,3,256,384,1,Conv,-1,-2,-1
+Conv4,15,15,3,3,384,384,1,Conv,-1,-2,-1
