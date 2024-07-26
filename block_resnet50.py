@@ -12,6 +12,10 @@ from torchvision.transforms import ToTensor
 from torchvision.transforms.functional import pil_to_tensor
 from torchinfo import summary
 
+from torchvision.models import resnet50, ResNet50_Weights
+
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 models_dir = './models'
@@ -32,7 +36,8 @@ train_dataset, test_dataset = torch.utils.data.random_split(dataset, lengths)
 trainloader = torch.utils.data.DataLoader(train_dataset, batch_size=50, shuffle=True)
 testloader = torch.utils.data.DataLoader(test_dataset, batch_size=10, shuffle=True)
 
-model = getattr(models, 'alexnet')(pretrained=True)
+# Using pretrained weights:
+model = resnet50(weights=ResNet50_Weights.IMAGENET1K_V1)
 criterion = nn.CrossEntropyLoss()
 
 
@@ -90,7 +95,7 @@ def fit_blocks(model, num_blocks, dataloader, epochs=50):
                     rem_epochs += this_rem_epochs
 
     print('training time for {} blocks: %.2f'.format(num_blocks) % (time.time() - start))
-    pickle.dump(model, open(models_dir+'/alexnet_{}_blocks'.format(num_blocks), 'wb'))
+    pickle.dump(model, open(models_dir+'/resnet50_{}_blocks'.format(num_blocks), 'wb'))
     print('saved model with {} blocks!'.format(num_blocks))
 
 
