@@ -81,7 +81,7 @@ class Topo():
         os.mkdir(n_blocked_dir+'/{}_blocks'.format(num_blocks))
         for i in range(len(topos)):
             topos[i].layers = blocks[i]
-            topos[i].write_topo_file(path=n_blocked_dir+'/{}_blocks'.format(num_blocks), filename=self.name+'_{}o{}_block'.format(num_blocks,i))
+            topos[i].write_topo_file(path=n_blocked_dir+'/{}_dblocks'.format(num_blocks), filename=self.name+'_{}o{}_dblock'.format(num_blocks,i))
 
 
     # width-wise blocking of scale-sim topology file
@@ -106,13 +106,13 @@ class Topo():
                     blocks[i].append(to_add)
 
         topos = [Topo() for _ in range(num_blocks)]
-        n_blocked_dir = depth_blocked_dir + '/' + self.name + '_blocked'
+        n_blocked_dir = width_blocked_dir + '/' + self.name + '_blocked'
         if first_run:
             os.mkdir(n_blocked_dir)
         os.mkdir(n_blocked_dir+'/{}_blocks'.format(num_blocks))
         for i in range(len(topos)):
             topos[i].layers = blocks[i]
-            topos[i].write_topo_file(path=n_blocked_dir+'/{}_blocks'.format(num_blocks), filename=self.name+'_{}o{}_block'.format(num_blocks,i))
+            topos[i].write_topo_file(path=n_blocked_dir+'/{}_wblocks'.format(num_blocks), filename=self.name+'_{}o{}_wblock'.format(num_blocks,i))
 
 
     def write_topo_file(self, path, filename):
