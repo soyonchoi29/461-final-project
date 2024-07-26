@@ -12,6 +12,6 @@ do
     NAME="${1}_${2}o${i}_block"
     make "${NAME}"
     cd ..
-    scp -r "./mNPUsim/${NAME}" "./results/${NAME}_${2}blocks/${NAME}"
+    scp -r "./mNPUsim/${NAME}" "./results/${1}_${2}blocks/${NAME}"
     echo "block ${i} done!"
 done
