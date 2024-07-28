@@ -146,11 +146,19 @@ if __name__ == '__main__':
                         default='alexnet.csv',
                         help="Name of network topology file to block"
                         )
-
+    parser.add_argument('-v', metavar='Version choice: Depth or Width?', type=str,
+                        default='d',
+                        help='Choice of blocking method, w for width and d for depth')
 
     args = parser.parse_args()
     num_blocks = args.b
     topo_file = args.t
+    vers = args.v
 
     topology = Topo()
-    topology.block_topo_depth(topo_file, num_blocks, first_run=False)
+    if vers == 'd':
+        topology.block_topo_depth(topo_file, num_blocks, first_run=False)
+    elif vers == 'w':
+        topology.block_topo_width(topo_file, num_blocks, first_run=False)
+    else:
+        print('Error: Blocking method not selected.')
