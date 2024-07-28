@@ -4,7 +4,7 @@ RES_DIR=./results/
 
 python3 block_topo_mnpusim.py -b ${2} -t "${1}.csv"
 scp ./Makefile ./mNPUsim/Makefile
-mkdir "./results/${NAME}_${2}blocks"
+mkdir "./results/${1}_${2}blocks"
 
 for i in $(seq 0 $((${2}-1)))
 do
