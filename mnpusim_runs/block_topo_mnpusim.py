@@ -81,7 +81,7 @@ class Topo():
         os.mkdir(n_blocked_dir+'/{}_blocks'.format(num_blocks))
         for i in range(len(topos)):
             topos[i].layers = blocks[i]
-            topos[i].write_topo_file(path=n_blocked_dir+'/{}_dblocks'.format(num_blocks), filename=self.name+'_{}o{}_dblock'.format(num_blocks,i))
+            topos[i].write_topo_file(path=n_blocked_dir+'/{}_blocks'.format(num_blocks), filename=self.name+'_{}o{}_dblock'.format(num_blocks,i))
 
 
     # width-wise blocking of scale-sim topology file
@@ -112,7 +112,7 @@ class Topo():
         os.mkdir(n_blocked_dir+'/{}_blocks'.format(num_blocks))
         for i in range(len(topos)):
             topos[i].layers = blocks[i]
-            topos[i].write_topo_file(path=n_blocked_dir+'/{}_wblocks'.format(num_blocks), filename=self.name+'_{}o{}_wblock'.format(num_blocks,i))
+            topos[i].write_topo_file(path=n_blocked_dir+'/{}_blocks'.format(num_blocks), filename=self.name+'_{}o{}_wblock'.format(num_blocks,i))
 
 
     def write_topo_file(self, path, filename):
@@ -153,4 +153,4 @@ if __name__ == '__main__':
     topo_file = args.t
 
     topology = Topo()
-    topology.block_topo_width(topo_file, num_blocks, first_run=False)
+    topology.block_topo_depth(topo_file, num_blocks, first_run=False)
