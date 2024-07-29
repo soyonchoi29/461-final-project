@@ -13,6 +13,12 @@ mkdir "./results/${1}_${2}${3}blocks"
 for i in $(seq 0 $((${2}-1)))
 do
     cd mNPUsim
+    if [ ${i} == 0 ]; then
+    make clean
+    make
+    echo "made mnpusim"
+    fi
+
     NAME="${1}_${2}o${i}_${3}block"
     make "${NAME}"
     cd ..
