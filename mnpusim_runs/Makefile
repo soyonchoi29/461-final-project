@@ -2,7 +2,7 @@ SRCS = accelerator.h common.h main.cpp npu_accelerator.cpp npu_group.cpp softwar
 MEMSRCS = address_translator.cpp address_translator.h memconfig.cpp memctrl.cpp memctrl.h memctrl_sharedtlb.cpp npumemconfig.cpp ptw.cpp ptw.h spm.cpp spm.h tlb.cpp tlb.h
 LINK = -L./DRAMsim3/src/
 LIB = -L./DRAMsim3 -ldramsim3
-DEBUG = -g -O2
+DEBUG = -g -Wall
 
 all: single
 
