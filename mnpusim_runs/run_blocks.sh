@@ -12,7 +12,7 @@ mkdir "./results/${1}_${2}${3}blocks"
 
 for i in $(seq 0 $((${2}-1)))
 do
-    cd mNPUsim
+    cd mNPUsim || exit
     if [ ${i} == 0 ]; then
         make clean
         make

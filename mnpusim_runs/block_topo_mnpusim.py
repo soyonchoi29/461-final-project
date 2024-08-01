@@ -119,9 +119,9 @@ class Topo():
         # write actual blocked topology file
         with open(path+'/'+filename+'.csv', 'w', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(self.layers[0].cfg.keys())
+            writer.writerow(self.layers[0].cfg.keys().append(','))
             for layer in self.layers:
-                writer.writerow(layer.get_row())
+                writer.writerow(layer.get_row().append(','))
 
         # add path text file (required by mNPUsim)
         file = open(path+'/'+filename+'.txt', 'w')
