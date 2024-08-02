@@ -97,3 +97,51 @@ alexnet_2o0_dblock:
 alexnet_2o1_dblock:
 	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
 	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/2_blocks/alexnet_2o1_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_2o1_dblock misc_config/single.cfg
+
+alexnet_4o0_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/4_blocks/alexnet_4o0_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_4o0_dblock misc_config/single.cfg
+
+alexnet_4o1_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/4_blocks/alexnet_4o1_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_4o1_dblock misc_config/single.cfg
+
+alexnet_4o2_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/4_blocks/alexnet_4o2_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_4o2_dblock misc_config/single.cfg
+
+alexnet_4o3_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/4_blocks/alexnet_4o3_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_4o3_dblock misc_config/single.cfg
+
+alexnet_8o0_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/8_blocks/alexnet_8o0_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_8o0_dblock misc_config/single.cfg
+
+alexnet_8o1_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/8_blocks/alexnet_8o1_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_8o1_dblock misc_config/single.cfg
+
+alexnet_8o2_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/8_blocks/alexnet_8o2_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_8o2_dblock misc_config/single.cfg
+
+alexnet_8o3_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/8_blocks/alexnet_8o3_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_8o3_dblock misc_config/single.cfg
+
+alexnet_8o4_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/8_blocks/alexnet_8o4_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_8o4_dblock misc_config/single.cfg
+
+alexnet_8o5_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/8_blocks/alexnet_8o5_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_8o5_dblock misc_config/single.cfg
+
+alexnet_8o6_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/8_blocks/alexnet_8o6_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_8o6_dblock misc_config/single.cfg
+
+alexnet_8o7_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/8_blocks/alexnet_8o7_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_8o7_dblock misc_config/single.cfg
