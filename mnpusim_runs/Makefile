@@ -89,3 +89,11 @@ alexnet_2o0_dblock:
 alexnet_2o1_dblock:
 	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
 	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/2_blocks/alexnet_2o1_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_2o1_dblock misc_config/single.cfg
+
+alexnet_2o0_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/2_blocks/alexnet_2o0_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_2o0_dblock misc_config/single.cfg
+
+alexnet_2o1_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/alexnet_blocked/2_blocks/alexnet_2o1_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt alexnet_2o1_dblock misc_config/single.cfg
