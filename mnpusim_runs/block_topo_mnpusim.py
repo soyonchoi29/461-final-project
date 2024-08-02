@@ -153,16 +153,20 @@ if __name__ == '__main__':
     parser.add_argument('-m', metavar='Mode choice: Depth or Width?', type=str,
                         default='d',
                         help='Choice of blocking method, w for width and d for depth')
+    parser.add_argument('-f', metavar='First run?', type=bool,
+                        default=False,
+                        help='Is it the first time running blocking of this network architecture?')
 
     args = parser.parse_args()
     num_blocks = args.b
     topo_file = args.t
     mode = args.m
+    first = args.f
 
     topology = Topo()
     if mode == 'd':
-        topology.block_topo_depth(topo_file, num_blocks, first_run=False)
+        topology.block_topo_depth(topo_file, num_blocks, first_run=first)
     elif mode == 'w':
-        topology.block_topo_width(topo_file, num_blocks, first_run=False)
+        topology.block_topo_width(topo_file, num_blocks, first_run=first)
     else:
         print('Error: Blocking method not selected.')
