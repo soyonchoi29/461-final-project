@@ -116,6 +116,7 @@ class Topo():
 
 
     def write_topo_file(self, path, filename):
+        print(filename) # debug
         # write actual blocked topology file
         with open(path+'/'+filename+'.csv', 'w', newline='') as file:
             writer = csv.writer(file)
