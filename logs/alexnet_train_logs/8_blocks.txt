@@ -1,61 +1,74 @@
 
  about to train block 0!
-Epoch 0/6, Avg Loss: 13.2299
-Epoch 1/6, Avg Loss: 14.1180
-Epoch 2/6, Avg Loss: 12.7620
-Epoch 3/6, Avg Loss: 12.2032
-Epoch 4/6, Avg Loss: 12.3774
-Epoch 5/6, Avg Loss: 12.3967
-[13.229907035827637, 14.118032455444336, 12.761994361877441, 12.20317268371582, 12.37739372253418, 12.396745681762695]
+going to train for 6 epochs!
+Epoch 0/6, Avg Loss: 12.5720
+Epoch 1/6, Avg Loss: 12.9375
+Epoch 2/6, Avg Loss: 12.9614
 
  about to train block 1!
-Epoch 0/6, Avg Loss: 12.4263
-Epoch 1/6, Avg Loss: 11.0447
-Epoch 2/6, Avg Loss: 10.7723
-Epoch 3/6, Avg Loss: 10.4404
-Epoch 4/6, Avg Loss: 10.1389
-Epoch 5/6, Avg Loss: 9.7280
-[12.42634391784668, 11.044692039489746, 10.772317886352539, 10.440418243408203, 10.138858795166016, 9.7279691696167]
+going to train for 10 epochs!
+Epoch 0/10, Avg Loss: 12.0200
+Epoch 1/10, Avg Loss: 11.6218
+Epoch 2/10, Avg Loss: 12.0363
+Epoch 3/10, Avg Loss: 10.6429
+Epoch 4/10, Avg Loss: 10.4068
+Epoch 5/10, Avg Loss: 10.6639
+Epoch 6/10, Avg Loss: 9.2302
+Epoch 7/10, Avg Loss: 8.9005
+Epoch 8/10, Avg Loss: 8.8602
+Epoch 9/10, Avg Loss: 8.4891
+[12.019969940185547, 11.621795654296875, 12.0363187789917, 10.642877578735352, 10.406805038452148, 10.663888931274414, 9.230205535888672, 8.90045166015625, 8.860158920288086, 8.48906135559082]
 
  about to train block 2!
 
  about to train block 3!
-Epoch 0/6, Avg Loss: 9.8345
-Epoch 1/6, Avg Loss: 9.6306
-Epoch 2/6, Avg Loss: 8.6675
-Epoch 3/6, Avg Loss: 8.6302
-Epoch 4/6, Avg Loss: 8.6057
-Epoch 5/6, Avg Loss: 8.1040
-[9.834479331970215, 9.630619049072266, 8.667484283447266, 8.630229949951172, 8.605705261230469, 8.104022026062012]
+going to train for 10 epochs!
+Epoch 0/10, Avg Loss: 8.5294
+Epoch 1/10, Avg Loss: 7.7366
+Epoch 2/10, Avg Loss: 7.9871
+Epoch 3/10, Avg Loss: 8.3036
+Epoch 4/10, Avg Loss: 7.5691
+Epoch 5/10, Avg Loss: 7.4812
+Epoch 6/10, Avg Loss: 7.5651
+Epoch 7/10, Avg Loss: 7.3751
+Epoch 8/10, Avg Loss: 7.2816
+Epoch 9/10, Avg Loss: 7.1549
+[8.529401779174805, 7.736555576324463, 7.987147808074951, 8.303637504577637, 7.569061756134033, 7.481210708618164, 7.565058708190918, 7.375138759613037, 7.2816362380981445, 7.154895782470703]
 
  about to train block 4!
-Epoch 0/6, Avg Loss: 8.3042
-Epoch 1/6, Avg Loss: 7.7530
-Epoch 2/6, Avg Loss: 8.1921
-Epoch 3/6, Avg Loss: 7.8749
-Epoch 4/6, Avg Loss: 7.7158
-Epoch 5/6, Avg Loss: 7.7627
-[8.30417251586914, 7.753023624420166, 8.192093849182129, 7.874926567077637, 7.7157793045043945, 7.762691497802734]
+going to train for 10 epochs!
+Epoch 0/10, Avg Loss: 7.2439
+Epoch 1/10, Avg Loss: 7.1201
+Epoch 2/10, Avg Loss: 6.7046
+Epoch 3/10, Avg Loss: 6.9495
+Epoch 4/10, Avg Loss: 6.9291
 
  about to train block 5!
-Epoch 0/6, Avg Loss: 7.5852
-Epoch 1/6, Avg Loss: 7.4322
-Epoch 2/6, Avg Loss: 7.4993
-Epoch 3/6, Avg Loss: 7.6773
-Epoch 4/6, Avg Loss: 7.6066
-Epoch 5/6, Avg Loss: 7.4834
-[7.585200786590576, 7.432244777679443, 7.499301910400391, 7.677306652069092, 7.60664176940918, 7.483373641967773]
+going to train for 16 epochs!
+Epoch 0/16, Avg Loss: 7.1032
+Epoch 1/16, Avg Loss: 6.9616
+Epoch 2/16, Avg Loss: 6.8196
+Epoch 3/16, Avg Loss: 6.9374
+Epoch 4/16, Avg Loss: 6.7984
+Epoch 5/16, Avg Loss: 6.8484
+Epoch 6/16, Avg Loss: 7.0052
+Epoch 7/16, Avg Loss: 6.8999
+Epoch 8/16, Avg Loss: 6.9149
 
  about to train block 6!
 
  about to train block 7!
-Epoch 0/6, Avg Loss: 7.4728
-Epoch 1/6, Avg Loss: 6.9746
-Epoch 2/6, Avg Loss: 6.7787
-Epoch 3/6, Avg Loss: 6.8394
-Epoch 4/6, Avg Loss: 6.8502
-Epoch 5/6, Avg Loss: 6.3293
-[7.472837448120117, 6.974554061889648, 6.778665542602539, 6.839441299438477, 6.850176811218262, 6.329312324523926]
-training time for 8 blocks: 45.43
+going to train for 24 epochs!
+Epoch 0/24, Avg Loss: 6.9074
+Epoch 1/24, Avg Loss: 6.4999
+Epoch 2/24, Avg Loss: 6.6283
+Epoch 3/24, Avg Loss: 6.2133
+Epoch 4/24, Avg Loss: 6.1348
+Epoch 5/24, Avg Loss: 6.1708
+Epoch 6/24, Avg Loss: 5.8017
+Epoch 7/24, Avg Loss: 5.9070
+Epoch 8/24, Avg Loss: 5.6274
+Epoch 9/24, Avg Loss: 5.6195
+training time for 8 blocks: 60.75
 saved model with 8 blocks!
-test loss: 7.29
+test loss: 6.97

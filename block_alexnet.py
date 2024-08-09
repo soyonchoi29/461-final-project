@@ -78,13 +78,14 @@ def fit_blocks(model, num_blocks, dataloader, epochs=50):
                 for param in layer.parameters():
                     param.requires_grad = True
                     params.append(param)
-            if params:
+            if params: # if there are params to train, train them
                 if i == num_blocks-1:
                     epochs_block = epochs_per_block + (epochs % num_blocks)
                 if rem_epochs is not None:
                     epochs_block = epochs_per_block + rem_epochs
                 optimizer = torch.optim.Adam(params, lr=5e-5)
                 # now train!
+                print('going to train for {} epochs!'.format(epochs_block))
                 model, this_rem_epochs = fit(model, optimizer, dataloader, epochs=epochs_block)
                 if this_rem_epochs is not None:
                     rem_epochs += this_rem_epochs
@@ -94,10 +95,10 @@ def fit_blocks(model, num_blocks, dataloader, epochs=50):
     print('saved model with {} blocks!'.format(num_blocks))
 
 
-def fit(model, optimizer, dataloader, epochs=50, conv_tol=0.01):
+def fit(model, optimizer, dataloader, epochs=50, conv_tol=0.03):
     model.train()
     losses = []
-    prev_loss = 0
+    prev_loss = -100
     rem_epochs = epochs
     for epoch in range(epochs):
         for batch, labels in dataloader:
@@ -117,6 +118,8 @@ def fit(model, optimizer, dataloader, epochs=50, conv_tol=0.01):
             if conv_tol > abs(prev_loss-loss):
                 rem_epochs -= epoch
                 return model, rem_epochs
+
+            prev_loss = loss
 
     print(losses)
     return model, None
