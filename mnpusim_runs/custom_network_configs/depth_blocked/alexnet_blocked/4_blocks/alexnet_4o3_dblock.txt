@@ -1,0 +1,1 @@
+../custom_network_configs/depth_blocked/alexnet_blocked/4_blocks/alexnet_4o3_dblock.csv

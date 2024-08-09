@@ -1,0 +1,1 @@
+../custom_network_configs/depth_blocked/resnet50_blocked/8_blocks/resnet50_8o4_dblock.csv
