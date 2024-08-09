@@ -114,14 +114,6 @@ resnet50_2o1_dblock:
 	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
 	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/resnet50_blocked/2_blocks/resnet50_2o1_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt resnet50_2o1_dblock misc_config/single.cfg
 
-resnet50_2o0_dblock:
-	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
-	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/resnet50_blocked/2_blocks/resnet50_2o0_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt resnet50_2o0_dblock misc_config/single.cfg
-
-resnet50_2o1_dblock:
-	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
-	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/resnet50_blocked/2_blocks/resnet50_2o1_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt resnet50_2o1_dblock misc_config/single.cfg
-
 resnet50_4o0_dblock:
 	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
 	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/resnet50_blocked/4_blocks/resnet50_4o0_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt resnet50_4o0_dblock misc_config/single.cfg
