@@ -100,7 +100,7 @@ def fit_blocks(model, num_blocks, dataloader, epochs=50):
     print('saved model with {} blocks!'.format(num_blocks))
 
 
-def fit(model, optimizer, dataloader, epochs=50, conv_tol=0.05):
+def fit(model, optimizer, dataloader, epochs=50, conv_tol=0.03):
     model.train()
     losses = []
     prev_loss = -100

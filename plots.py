@@ -43,7 +43,7 @@ ax1.tick_params(labelsize=8)
 
 
 ax2.set_title('Resnet50')
-ax2.scatter([760983, 791942, 319005, 811855], [0.0745, 0.0711, 1.3020, 4.4269])
+ax2.scatter([760983, 791942, 776343, 811855], [0.0745, 0.0711, 1.3020, 4.4269])
 for i, txt in enumerate(['n=1', 'n=2', 'n=4', 'n=8']):
     ax2.annotate(txt,(np.array([760983, 791942, 319005, 811855])[i], np.array([0.0745, 0.0711, 1.3020, 4.4269])[i]), fontsize=7)
 ax2.set_xlabel('Total Execution Cycles', fontsize=12)
