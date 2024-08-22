@@ -1,8 +1,0 @@
-Layer name, IFMAP Height, IFMAP Width, Filter Height, Filter Width, Channels, Num Filter, Strides, Type, IFMAP Base Addr(Absolute), Filter Base Addr(Absolute), Ofmap Base Addr(Absolute),
-IB4b_1,14,14,1,1,1024,256,1,Conv,0,0,462848,
-IB4b_2,14,14,3,3,256,256,1,Conv,462848,462848,513024,
-IB4b_3,14,14,1,1,256,1024,1,Conv,513024,513024,1052672,
-IB4c_1,14,14,1,1,1024,256,1,Conv,1052672,1052672,1253376,
-IB4c_2,14,14,3,3,256,256,1,Conv,1253376,1253376,1314816,
-IB4c_3,14,14,1,1,256,1024,1,Conv,1314816,1314816,1843200,
-

@@ -153,3 +153,27 @@ resnet50_8o6_dblock:
 resnet50_8o7_dblock:
 	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
 	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/resnet50_blocked/8_blocks/resnet50_8o7_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt resnet50_8o7_dblock misc_config/single.cfg
+
+gpt2_2o0_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/gpt2_blocked/2_blocks/gpt2_2o0_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt gpt2_2o0_dblock misc_config/single.cfg
+
+gpt2_2o1_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/gpt2_blocked/2_blocks/gpt2_2o1_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt gpt2_2o1_dblock misc_config/single.cfg
+
+gpt2_4o0_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/gpt2_blocked/4_blocks/gpt2_4o0_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt gpt2_4o0_dblock misc_config/single.cfg
+
+gpt2_4o1_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/gpt2_blocked/4_blocks/gpt2_4o1_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt gpt2_4o1_dblock misc_config/single.cfg
+
+gpt2_4o2_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/gpt2_blocked/4_blocks/gpt2_4o2_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt gpt2_4o2_dblock misc_config/single.cfg
+
+gpt2_4o3_dblock:
+	export LD_LIBRARY_PATH=./DRAMsim3:$$LD_LIBRARY_PATH &&\
+	./mnpusim arch_config/core_architecture_list/tpu.txt ../custom_network_configs/depth_blocked/gpt2_blocked/4_blocks/gpt2_4o3_dblock.txt dram_config/total_dram_config/single_hbm2_256gbs.cfg npumem_config/npumem_architecture_list/single.txt gpt2_4o3_dblock misc_config/single.cfg

@@ -1,0 +1,1 @@
+../custom_network_configs/depth_blocked/gpt2_blocked/4_blocks/gpt2_4o2_dblock.csv
