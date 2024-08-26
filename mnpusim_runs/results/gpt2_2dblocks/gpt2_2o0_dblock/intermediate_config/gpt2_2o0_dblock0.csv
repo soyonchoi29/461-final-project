@@ -1,0 +1,6 @@
+Layer name, IFMAP Height, IFMAP Width, Filter Height, Filter Width, Channels, Num Filter, Strides, Type, IFMAP Base Addr(Absolute), Filter Base Addr(Absolute), Ofmap Base Addr(Absolute),
+QKT_T0,1024,1,1,1,64,1024,1,Conv,0,0,131072,
+QKTV_T0,1024,1,1,1,1024,64,1,Conv,1179648,2228224,2293760,
+Linear1_T0,1024,1,1,1,1310,4800,1,Conv,2359296,3997696,11677696,
+Linear1_T1,1024,1,1,1,290,4800,1,Conv,3700736,10285696,11677696,
+

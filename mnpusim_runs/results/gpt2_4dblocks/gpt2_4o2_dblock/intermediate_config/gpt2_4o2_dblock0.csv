@@ -1,0 +1,5 @@
+Layer name, IFMAP Height, IFMAP Width, Filter Height, Filter Width, Channels, Num Filter, Strides, Type, IFMAP Base Addr(Absolute), Filter Base Addr(Absolute), Ofmap Base Addr(Absolute),
+Linear1_T0,1024,1,1,1,1310,4800,1,Conv,0,0,9318400,
+Linear1_T1,1024,1,1,1,290,4800,1,Conv,1341440,6288000,9318400,
+Linear2_T0,1024,1,1,1,1600,1600,1,Conv,14233600,15872000,18432000,
+
