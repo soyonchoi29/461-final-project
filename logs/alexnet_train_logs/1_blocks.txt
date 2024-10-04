@@ -1,21 +1,123 @@
-Epoch 0/50, Avg Loss: 13.4760
-Epoch 1/50, Avg Loss: 10.3447
-Epoch 2/50, Avg Loss: 8.3826
-Epoch 3/50, Avg Loss: 7.4176
-Epoch 4/50, Avg Loss: 7.1796
-Epoch 5/50, Avg Loss: 6.9444
-Epoch 6/50, Avg Loss: 6.6344
-Epoch 7/50, Avg Loss: 6.6023
-Epoch 8/50, Avg Loss: 6.4855
-Epoch 9/50, Avg Loss: 6.4242
-Epoch 10/50, Avg Loss: 6.1150
-Epoch 11/50, Avg Loss: 6.0121
-Epoch 12/50, Avg Loss: 5.9195
-Epoch 13/50, Avg Loss: 5.7669
-Epoch 14/50, Avg Loss: 5.5047
-Epoch 15/50, Avg Loss: 5.4399
-Epoch 16/50, Avg Loss: 5.2696
-Epoch 17/50, Avg Loss: 5.2471
-training time for 1 blocks: 42.05
+y:  tensor(396)
+preds:  tensor(427)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+y:  tensor(269)
+preds:  tensor(340)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+y:  tensor(742)
+preds:  tensor(584)
+corr:  tensor([False, False, False,  True, False, False, False, False, False, False])
+test acc before training: 0.00
+Epoch 0/100, Avg Loss: 12.7555
+Epoch 1/100, Avg Loss: 9.1298
+Epoch 2/100, Avg Loss: 8.3284
+Epoch 3/100, Avg Loss: 7.2326
+Epoch 4/100, Avg Loss: 6.6885
+Epoch 5/100, Avg Loss: 7.0173
+Epoch 6/100, Avg Loss: 6.3149
+Epoch 7/100, Avg Loss: 6.4836
+Epoch 8/100, Avg Loss: 6.4343
+Epoch 9/100, Avg Loss: 6.0137
+Epoch 10/100, Avg Loss: 5.9938
+Epoch 11/100, Avg Loss: 5.8516
+Epoch 12/100, Avg Loss: 5.6396
+Epoch 13/100, Avg Loss: 5.3152
+Epoch 14/100, Avg Loss: 5.4800
+Epoch 15/100, Avg Loss: 5.3290
+Epoch 16/100, Avg Loss: 5.2825
+Epoch 17/100, Avg Loss: 4.4435
+Epoch 18/100, Avg Loss: 4.5913
+Epoch 19/100, Avg Loss: 4.0517
+Epoch 20/100, Avg Loss: 3.9769
+Epoch 21/100, Avg Loss: 3.4610
+Epoch 22/100, Avg Loss: 3.3929
+Epoch 23/100, Avg Loss: 2.9059
+Epoch 24/100, Avg Loss: 2.9246
+Epoch 25/100, Avg Loss: 2.4745
+Epoch 26/100, Avg Loss: 2.1986
+Epoch 27/100, Avg Loss: 2.1266
+Epoch 28/100, Avg Loss: 1.5152
+Epoch 29/100, Avg Loss: 1.6208
+Epoch 30/100, Avg Loss: 1.4915
+Epoch 31/100, Avg Loss: 1.0741
+Epoch 32/100, Avg Loss: 1.0987
+Epoch 33/100, Avg Loss: 1.0558
+Epoch 34/100, Avg Loss: 0.9529
+Epoch 35/100, Avg Loss: 0.5751
+Epoch 36/100, Avg Loss: 0.5907
+Epoch 37/100, Avg Loss: 0.5010
+Epoch 38/100, Avg Loss: 0.5139
+Epoch 39/100, Avg Loss: 0.7370
+Epoch 40/100, Avg Loss: 0.4998
+Epoch 41/100, Avg Loss: 0.2963
+Epoch 42/100, Avg Loss: 0.3122
+Epoch 43/100, Avg Loss: 0.4076
+Epoch 44/100, Avg Loss: 0.3294
+Epoch 45/100, Avg Loss: 0.4129
+Epoch 46/100, Avg Loss: 0.4761
+Epoch 47/100, Avg Loss: 0.1886
+Epoch 48/100, Avg Loss: 0.2733
+Epoch 49/100, Avg Loss: 0.2575
+Epoch 50/100, Avg Loss: 0.3736
+Epoch 51/100, Avg Loss: 0.4900
+Epoch 52/100, Avg Loss: 0.2524
+Epoch 53/100, Avg Loss: 0.4203
+Epoch 54/100, Avg Loss: 0.2100
+Epoch 55/100, Avg Loss: 0.2910
+Epoch 56/100, Avg Loss: 0.0259
+Epoch 57/100, Avg Loss: 0.1881
+Epoch 58/100, Avg Loss: 0.1262
+Epoch 59/100, Avg Loss: 0.0922
+Epoch 60/100, Avg Loss: 0.1059
+Epoch 61/100, Avg Loss: 0.0829
+Epoch 62/100, Avg Loss: 0.0265
+Epoch 63/100, Avg Loss: 0.1106
+Epoch 64/100, Avg Loss: 0.2630
+Epoch 65/100, Avg Loss: 0.0556
+Epoch 66/100, Avg Loss: 0.1322
+Epoch 67/100, Avg Loss: 0.0704
+Epoch 68/100, Avg Loss: 0.0768
+Epoch 69/100, Avg Loss: 0.2059
+Epoch 70/100, Avg Loss: 0.2045
+Epoch 71/100, Avg Loss: 0.0952
+Epoch 72/100, Avg Loss: 0.0370
+Epoch 73/100, Avg Loss: 0.0880
+Epoch 74/100, Avg Loss: 0.0530
+Epoch 75/100, Avg Loss: 0.1223
+Epoch 76/100, Avg Loss: 0.0670
+Epoch 77/100, Avg Loss: 0.0912
+Epoch 78/100, Avg Loss: 0.1167
+Epoch 79/100, Avg Loss: 0.0536
+Epoch 80/100, Avg Loss: 0.1225
+Epoch 81/100, Avg Loss: 0.2030
+Epoch 82/100, Avg Loss: 0.0640
+Epoch 83/100, Avg Loss: 0.1384
+Epoch 84/100, Avg Loss: 0.0384
+Epoch 85/100, Avg Loss: 0.0073
+Epoch 86/100, Avg Loss: 0.1057
+Epoch 87/100, Avg Loss: 0.1676
+Epoch 88/100, Avg Loss: 0.0204
+Epoch 89/100, Avg Loss: 0.0753
+Epoch 90/100, Avg Loss: 0.0425
+Epoch 91/100, Avg Loss: 0.0143
+Epoch 92/100, Avg Loss: 0.1997
+Epoch 93/100, Avg Loss: 0.0956
+Epoch 94/100, Avg Loss: 0.1133
+Epoch 95/100, Avg Loss: 0.1083
+Epoch 96/100, Avg Loss: 0.0222
+Epoch 97/100, Avg Loss: 0.0399
+Epoch 98/100, Avg Loss: 0.0443
+Epoch 99/100, Avg Loss: 0.0424
+[12.755545616149902, 9.12977123260498, 8.32838249206543, 7.232598304748535, 6.688459873199463, 7.017292022705078, 6.31488037109375, 6.48355770111084, 6.434262752532959, 6.013692855834961, 5.993815898895264, 5.851566314697266, 5.639646053314209, 5.315185546875, 5.4799981117248535, 5.3290019035339355, 5.2824578285217285, 4.4435133934021, 4.591292858123779, 4.051703929901123, 3.97688364982605, 3.461021661758423, 3.3928704261779785, 2.905885934829712, 2.924628257751465, 2.4744529724121094, 2.1986243724823, 2.126612663269043, 1.5152099132537842, 1.6208350658416748, 1.4915456771850586, 1.0741164684295654, 1.0986727476119995, 1.0558466911315918, 0.9529062509536743, 0.5750917792320251, 0.5907226800918579, 0.501049816608429, 0.5139044523239136, 0.7370181083679199, 0.49979206919670105, 0.29625245928764343, 0.31215140223503113, 0.40761512517929077, 0.32936325669288635, 0.41285350918769836, 0.4760921001434326, 0.1885816901922226, 0.2733420133590698, 0.2574577033519745, 0.3735710084438324, 0.4899856448173523, 0.2523595094680786, 0.4202943742275238, 0.21004247665405273, 0.2910277247428894, 0.025927415117621422, 0.18809305131435394, 0.12624691426753998, 0.09217012673616409, 0.10585539788007736, 0.08286982774734497, 0.026533963158726692, 0.11060240864753723, 0.2629760205745697, 0.055586643517017365, 0.13223162293434143, 0.0703638568520546, 0.07681619375944138, 0.20590496063232422, 0.20452338457107544, 0.09518053382635117, 0.03698430210351944, 0.08796492218971252, 0.052980661392211914, 0.12227852642536163, 0.06702819466590881, 0.0912272036075592, 0.11669214069843292, 0.053576722741127014, 0.12251507490873337, 0.20300571620464325, 0.06397435069084167, 0.138447105884552, 0.03841015323996544, 0.007275077514350414, 0.10565187782049179, 0.16760899126529694, 0.020419791340827942, 0.07533667981624603, 0.04251383617520332, 0.014324280433356762, 0.19969815015792847, 0.0955597311258316, 0.11327239125967026, 0.10828141123056412, 0.022192195057868958, 0.03988821804523468, 0.04433804377913475, 0.04238082841038704]
+training time for 1 blocks: 332.89
 saved model with 1 blocks!
-test loss: 7.04
+y:  tensor(269)
+preds:  tensor(380)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+y:  tensor(335)
+preds:  tensor(308)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+y:  tensor(251)
+preds:  tensor(70)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+test acc after training: 0.00

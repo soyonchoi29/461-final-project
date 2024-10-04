@@ -1,74 +1,122 @@
+y:  tensor(289)
+preds:  tensor(362)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+y:  tensor(358)
+preds:  tensor(420)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+y:  tensor(693)
+preds:  tensor(722)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+test acc before training: 0.00
 
  about to train block 0!
-going to train for 6 epochs!
-Epoch 0/6, Avg Loss: 12.5720
-Epoch 1/6, Avg Loss: 12.9375
-Epoch 2/6, Avg Loss: 12.9614
+going to train for 12 epochs!
+Epoch 0/12, Avg Loss: 11.5965
+Epoch 1/12, Avg Loss: 12.4862
+Epoch 2/12, Avg Loss: 12.1514
+Epoch 3/12, Avg Loss: 11.9994
+Epoch 4/12, Avg Loss: 12.6872
+Epoch 5/12, Avg Loss: 11.0180
+Epoch 6/12, Avg Loss: 10.3359
+Epoch 7/12, Avg Loss: 11.8074
+Epoch 8/12, Avg Loss: 11.7887
+Epoch 9/12, Avg Loss: 11.4226
+Epoch 10/12, Avg Loss: 12.3526
+Epoch 11/12, Avg Loss: 11.5549
+[11.596492767333984, 12.48617935180664, 12.151427268981934, 11.99939250946045, 12.687180519104004, 11.018006324768066, 10.335884094238281, 11.807448387145996, 11.788736343383789, 11.422598838806152, 12.352642059326172, 11.55494499206543]
 
  about to train block 1!
-going to train for 10 epochs!
-Epoch 0/10, Avg Loss: 12.0200
-Epoch 1/10, Avg Loss: 11.6218
-Epoch 2/10, Avg Loss: 12.0363
-Epoch 3/10, Avg Loss: 10.6429
-Epoch 4/10, Avg Loss: 10.4068
-Epoch 5/10, Avg Loss: 10.6639
-Epoch 6/10, Avg Loss: 9.2302
-Epoch 7/10, Avg Loss: 8.9005
-Epoch 8/10, Avg Loss: 8.8602
-Epoch 9/10, Avg Loss: 8.4891
-[12.019969940185547, 11.621795654296875, 12.0363187789917, 10.642877578735352, 10.406805038452148, 10.663888931274414, 9.230205535888672, 8.90045166015625, 8.860158920288086, 8.48906135559082]
+going to train for 12 epochs!
+Epoch 0/12, Avg Loss: 11.1910
+Epoch 1/12, Avg Loss: 10.3673
+Epoch 2/12, Avg Loss: 10.2622
+Epoch 3/12, Avg Loss: 9.8874
+Epoch 4/12, Avg Loss: 9.2478
+Epoch 5/12, Avg Loss: 8.8174
+Epoch 6/12, Avg Loss: 8.9434
+Epoch 7/12, Avg Loss: 8.3690
+Epoch 8/12, Avg Loss: 8.3174
+Epoch 9/12, Avg Loss: 8.5145
+Epoch 10/12, Avg Loss: 8.7686
+Epoch 11/12, Avg Loss: 8.3587
+[11.190973281860352, 10.36732292175293, 10.262185096740723, 9.88742733001709, 9.247773170471191, 8.817425727844238, 8.943404197692871, 8.368982315063477, 8.317355155944824, 8.514533042907715, 8.768621444702148, 8.358665466308594]
 
  about to train block 2!
 
  about to train block 3!
-going to train for 10 epochs!
-Epoch 0/10, Avg Loss: 8.5294
-Epoch 1/10, Avg Loss: 7.7366
-Epoch 2/10, Avg Loss: 7.9871
-Epoch 3/10, Avg Loss: 8.3036
-Epoch 4/10, Avg Loss: 7.5691
-Epoch 5/10, Avg Loss: 7.4812
-Epoch 6/10, Avg Loss: 7.5651
-Epoch 7/10, Avg Loss: 7.3751
-Epoch 8/10, Avg Loss: 7.2816
-Epoch 9/10, Avg Loss: 7.1549
-[8.529401779174805, 7.736555576324463, 7.987147808074951, 8.303637504577637, 7.569061756134033, 7.481210708618164, 7.565058708190918, 7.375138759613037, 7.2816362380981445, 7.154895782470703]
+going to train for 12 epochs!
+Epoch 0/12, Avg Loss: 7.7801
+Epoch 1/12, Avg Loss: 7.6735
+Epoch 2/12, Avg Loss: 7.7937
+Epoch 3/12, Avg Loss: 7.6829
+Epoch 4/12, Avg Loss: 7.8780
+Epoch 5/12, Avg Loss: 7.2129
+Epoch 6/12, Avg Loss: 7.4603
+Epoch 7/12, Avg Loss: 7.1134
+Epoch 8/12, Avg Loss: 7.4420
+Epoch 9/12, Avg Loss: 7.3011
+Epoch 10/12, Avg Loss: 6.9854
+Epoch 11/12, Avg Loss: 7.1756
+[7.78005313873291, 7.673457622528076, 7.793731212615967, 7.6828718185424805, 7.877996921539307, 7.2129225730896, 7.4602766036987305, 7.113353252410889, 7.442023277282715, 7.301069736480713, 6.985429763793945, 7.17563009262085]
 
  about to train block 4!
-going to train for 10 epochs!
-Epoch 0/10, Avg Loss: 7.2439
-Epoch 1/10, Avg Loss: 7.1201
-Epoch 2/10, Avg Loss: 6.7046
-Epoch 3/10, Avg Loss: 6.9495
-Epoch 4/10, Avg Loss: 6.9291
+going to train for 12 epochs!
+Epoch 0/12, Avg Loss: 7.0891
+Epoch 1/12, Avg Loss: 7.3016
+Epoch 2/12, Avg Loss: 6.8372
+Epoch 3/12, Avg Loss: 6.9803
+Epoch 4/12, Avg Loss: 6.8709
+Epoch 5/12, Avg Loss: 6.8896
+Epoch 6/12, Avg Loss: 6.8628
+Epoch 7/12, Avg Loss: 6.6927
+Epoch 8/12, Avg Loss: 6.9088
+Epoch 9/12, Avg Loss: 6.3759
+Epoch 10/12, Avg Loss: 6.4337
+Epoch 11/12, Avg Loss: 6.8431
+[7.08909797668457, 7.301605701446533, 6.837200164794922, 6.980332851409912, 6.870929718017578, 6.889595985412598, 6.8628363609313965, 6.692713737487793, 6.908837795257568, 6.375919818878174, 6.433681488037109, 6.843087673187256]
 
  about to train block 5!
-going to train for 16 epochs!
-Epoch 0/16, Avg Loss: 7.1032
-Epoch 1/16, Avg Loss: 6.9616
-Epoch 2/16, Avg Loss: 6.8196
-Epoch 3/16, Avg Loss: 6.9374
-Epoch 4/16, Avg Loss: 6.7984
-Epoch 5/16, Avg Loss: 6.8484
-Epoch 6/16, Avg Loss: 7.0052
-Epoch 7/16, Avg Loss: 6.8999
-Epoch 8/16, Avg Loss: 6.9149
+going to train for 12 epochs!
+Epoch 0/12, Avg Loss: 6.7171
+Epoch 1/12, Avg Loss: 6.3728
+Epoch 2/12, Avg Loss: 6.6878
+Epoch 3/12, Avg Loss: 6.6400
+Epoch 4/12, Avg Loss: 6.4717
+Epoch 5/12, Avg Loss: 6.5606
+Epoch 6/12, Avg Loss: 6.5109
+Epoch 7/12, Avg Loss: 6.7392
+Epoch 8/12, Avg Loss: 6.4386
+Epoch 9/12, Avg Loss: 6.2740
+Epoch 10/12, Avg Loss: 6.7410
+Epoch 11/12, Avg Loss: 6.4874
+[6.717119216918945, 6.372848033905029, 6.687830924987793, 6.640005111694336, 6.471684455871582, 6.560610294342041, 6.510914325714111, 6.739210605621338, 6.438571929931641, 6.273971080780029, 6.741046905517578, 6.487363338470459]
 
  about to train block 6!
 
  about to train block 7!
-going to train for 24 epochs!
-Epoch 0/24, Avg Loss: 6.9074
-Epoch 1/24, Avg Loss: 6.4999
-Epoch 2/24, Avg Loss: 6.6283
-Epoch 3/24, Avg Loss: 6.2133
-Epoch 4/24, Avg Loss: 6.1348
-Epoch 5/24, Avg Loss: 6.1708
-Epoch 6/24, Avg Loss: 5.8017
-Epoch 7/24, Avg Loss: 5.9070
-Epoch 8/24, Avg Loss: 5.6274
-Epoch 9/24, Avg Loss: 5.6195
-training time for 8 blocks: 60.75
+going to train for 12 epochs!
+Epoch 0/12, Avg Loss: 6.4799
+Epoch 1/12, Avg Loss: 6.4001
+Epoch 2/12, Avg Loss: 6.4175
+Epoch 3/12, Avg Loss: 6.0570
+Epoch 4/12, Avg Loss: 6.0923
+Epoch 5/12, Avg Loss: 5.4054
+Epoch 6/12, Avg Loss: 5.7888
+Epoch 7/12, Avg Loss: 5.8045
+Epoch 8/12, Avg Loss: 5.3901
+Epoch 9/12, Avg Loss: 5.3513
+Epoch 10/12, Avg Loss: 5.2745
+Epoch 11/12, Avg Loss: 4.8887
+[6.479869365692139, 6.400079727172852, 6.417529106140137, 6.0569844245910645, 6.0923051834106445, 5.405394077301025, 5.788800239562988, 5.804482460021973, 5.390125751495361, 5.351280689239502, 5.2744879722595215, 4.888718128204346]
+training time for 8 blocks: 127.85
 saved model with 8 blocks!
-test loss: 6.97
+y:  tensor(289)
+preds:  tensor(297)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+y:  tensor(708)
+preds:  tensor(839)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+y:  tensor(700)
+preds:  tensor(694)
+corr:  tensor([False, False, False, False, False, False, False, False, False, False])
+test acc after training: 0.00

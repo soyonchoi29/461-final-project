@@ -12,33 +12,22 @@ from torchvision.transforms import ToTensor
 from torchvision.transforms.functional import pil_to_tensor
 from torchinfo import summary
 
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
+from transformers import GPT2Tokenizer, GPT2Model
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+model = GPT2Model.from_pretrained('gpt2')
+# text = "Replace me by any text you'd like."
+# encoded_input = tokenizer(text, return_tensors='pt')
+# output = model(**encoded_input)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 models_dir = './models'
 
-# get imagenetv2 data
-trans = transforms.Compose([pil_to_tensor,
-                            transforms.ConvertImageDtype(dtype=torch.float32),
-                            transforms.RandomChoice([transforms.Resize(256),
-                                                     transforms.Resize(480)]),
-                            transforms.RandomCrop(224),
-                            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-                            ])
-dataset = datasets.ImageFolder(root='./data/ImageNetV2-matched-frequency', transform=trans)
-dataset = torch.utils.data.Subset(dataset, np.random.randint(int(len(dataset)), size=130))
-lengths = [100, 30]
-train_dataset, test_dataset = torch.utils.data.random_split(dataset, lengths)
-
-trainloader = torch.utils.data.DataLoader(train_dataset, batch_size=50, shuffle=True)
-testloader = torch.utils.data.DataLoader(test_dataset, batch_size=10, shuffle=True)
-
-model = getattr(models, 'alexnet')(pretrained=True)
-pickle.dump(model, open(models_dir + '/alexnet_pretrained.pkl', 'wb'))
-criterion = nn.CrossEntropyLoss()
-
 
 # depth-wise blocked training of PyTorch module
-def fit_blocks(model, num_blocks, dataloader, epochs=100):
+def fit_blocks(model, num_blocks, dataloader, epochs=50):
     start = time.time()
 
     if num_blocks == 1:
@@ -79,7 +68,7 @@ def fit_blocks(model, num_blocks, dataloader, epochs=100):
                 for param in layer.parameters():
                     param.requires_grad = True
                     params.append(param)
-            if params: # if there are params to train, train them
+            if params:
                 if i == num_blocks-1:
                     epochs_block = epochs_per_block + (epochs % num_blocks)
                 if rem_epochs is not None:
@@ -92,11 +81,11 @@ def fit_blocks(model, num_blocks, dataloader, epochs=100):
                     rem_epochs += this_rem_epochs
 
     print('training time for {} blocks: %.2f'.format(num_blocks) % (time.time() - start))
-    pickle.dump(model, open(models_dir+'/alexnet_{}_blocks.pkl'.format(num_blocks), 'wb'))
+    pickle.dump(model, open(models_dir+'/resnet50_{}_blocks'.format(num_blocks), 'wb'))
     print('saved model with {} blocks!'.format(num_blocks))
 
 
-def fit(model, optimizer, dataloader, epochs=100, conv_tol=1e-4):
+def fit(model, optimizer, dataloader, epochs=50, conv_tol=0.03):
     model.train()
     losses = []
     prev_loss = -100
@@ -145,22 +134,22 @@ def get_children(model: torch.nn.Module):
 
 # given test data, outputs model accuracy
 def test_model(model, testloader):
-    if type(model) == tuple:
-        model = model[0]  # idk why this turned into a tuple i swear
-    total = 0.
+    total_loss = 0
+    total = 0
     model.eval()
     with torch.no_grad():
         for batch, labels in testloader:
             x = batch.to(device)
             y = labels.to(device)
-            print('y: ', y[0])
             preds = model(x)
-            preds = torch.argmax(preds, dim=1)
-            print('preds: ', preds[0])
-            corr = preds == y
-            print('corr: ', corr)
-            total += torch.sum(corr)/100.
-    return total/5.
+            # print('y=',y)
+            # print('preds=',preds)
+            loss = criterion(preds, y)
+            total_loss += loss
+            total += 1
+
+    total_loss = total_loss/total
+    return total_loss
 
 
 if __name__ == '__main__':
@@ -173,8 +162,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     num_blocks = args.b
 
-    print('test acc before training: %.2f' % test_model(model, testloader))
-
     fit_blocks(model, num_blocks, trainloader)
-    print('test acc after training: %.2f' % test_model(model, testloader))
+    print('test loss: %.2f' % test_model(model, testloader))
 

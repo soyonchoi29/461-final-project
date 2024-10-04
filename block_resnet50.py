@@ -96,7 +96,7 @@ def fit_blocks(model, num_blocks, dataloader, epochs=50):
                     rem_epochs += this_rem_epochs
 
     print('training time for {} blocks: %.2f'.format(num_blocks) % (time.time() - start))
-    pickle.dump(model, open(models_dir+'/resnet50_{}_blocks'.format(num_blocks), 'wb'))
+    pickle.dump(model, open(models_dir+'/resnet50_{}_blocks.pkl'.format(num_blocks), 'wb'))
     print('saved model with {} blocks!'.format(num_blocks))
 
 
